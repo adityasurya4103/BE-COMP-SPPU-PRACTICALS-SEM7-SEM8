@@ -1,7 +1,0 @@
-2023-10-09 22:11:50 Failed login for user john.doe from IP 192.168.1.1
-2023-10-09 22:11:52 Failed login for user jane.doe from IP 192.168.1.2
-2023-10-09 22:12:01 Failed login for user admin from IP 192.168.1.3
-2023-10-09 22:12:05 User john.doe logged in.
-2023-10-09 22:12:10 User jane.doe logged in.
-2023-10-09 22:12:15 Failed login for user john.doe.
-2023-10-09 22:12:20 User admin logged out.

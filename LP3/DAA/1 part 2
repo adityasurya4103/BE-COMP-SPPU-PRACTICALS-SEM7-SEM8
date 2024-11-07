@@ -1,0 +1,46 @@
+import timeit
+
+def fibonacci(n):
+    """Non-recursive Fibonacci function to return the entire series"""
+    for i in range(2, n + 1):
+        fib_list[i] = fib_list[i - 1] + fib_list[i - 2]
+    return fib_list[:n + 1]  # Return the entire series up to the nth element
+
+def fibonacci_recursive_series(n):
+    """Recursive Fibonacci function to build the series"""
+    if n == 0:
+        return [0]
+    if n == 1:
+        return [0, 1]
+    series = fibonacci_recursive_series(n - 1)
+    series.append(series[-1] + series[-2])
+    return series
+
+# User input for N and RUNS
+N = int(input("Enter the value of N (Fibonacci number to compute): "))
+RUNS = int(input("Enter the number of times to run the function for benchmarking: "))
+
+print(f"Given N = {N}\n{RUNS} runs")
+
+# Non-recursive Fibonacci
+fib_list = [0] * (N + 1)
+fib_list[0] = 0
+fib_list[1] = 1
+print(
+    "Fibonacci non-recursive series:",
+    fibonacci(N),  # Display the series
+    "\tTime:",
+    f'{timeit.timeit("fibonacci(N)", setup=f"from __main__ import fibonacci;N={N}", number=RUNS):5f}',
+    "O(n)\tSpace: O(1)"
+)
+
+# Recursive Fibonacci
+print(
+    "Fibonacci recursive series:\t",
+    fibonacci_recursive_series(N),  # Display the series
+    "\tTime:",
+    f'{timeit.timeit("fibonacci_recursive_series(N)", setup=f"from __main__ import fibonacci_recursive_series;N={N}", number=RUNS):5f}',
+    "O(2^n)\tSpace: O(n)"
+)
+
+

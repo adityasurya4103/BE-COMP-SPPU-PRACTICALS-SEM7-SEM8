@@ -41,3 +41,8 @@ print(
     f"\tTime: {timeit.timeit(f'fibonacci_recursive({N})', setup='from __main__ import fibonacci_recursive', number=RUNS):5f} seconds"
     f"\tO(2^n)\tSpace: O(n)"
 )
+
+
+# RUNS specifies the number of times the fibonacci(N) function will be executed to measure its average runtime. This is controlled by the timeit.timeit function, where the number parameter (set to RUNS) defines how many times fibonacci(N) should run.
+
+# Purpose of RUNS: By setting a high value (e.g., RUNS = 1000), the code repeatedly calls fibonacci(N) 1000 times, giving a more accurate measure of average runtime. This reduces fluctuations in timing and gives a stable performance estimate for the function.
